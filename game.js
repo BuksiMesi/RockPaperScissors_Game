@@ -41,5 +41,40 @@ function oneRound(playerSelection, computerSelection) {
       console.log("Please enter a valid choice!")
       return 2;
     }
-  }
+  };
 }
+
+  function game() {
+    let playerWins = 0;
+    let computerWins = 0;
+    for(let i=0; i < 5; i++) {
+      let playerSelection = prompt("Enter your choice: ");
+      let currPlayerSelection = lowerAndCapitalize(playerSelection);
+      let currRes = oneRound(currPlayerSelection, computerPlay());
+      while(currRes === 2) {
+        let newChoice = prompt("Enter your new choice: ");
+        let lowerNewChoice = lowerAndCapitalize(newChoice);
+        currRes = oneRound(lowerNewChoice, computerPlay());
+      }
+      if(currRes === 0) {
+        computerWins++;
+      } else if(currRes === 1) {
+        playerWins++;
+      } else {
+        computerWins++;
+        playerWins++;
+      }
+      console.log(`This is the ${i+1} round!`);
+    }
+    console.log(`Results: Computer points: ${computerWins} - Your points: ${playerWins}`);
+    if(computerWins > playerWins) {
+      console.log("Computer wins!");
+    } else if(playerWins > computerWins) {
+      console.log("Player wins!")
+    } else {
+      console.log("It\'s a tie!")
+    }
+    console.log("Refresh the page for a new game!")
+  };
+
+game();
