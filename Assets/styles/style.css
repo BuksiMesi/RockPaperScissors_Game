@@ -1,0 +1,11 @@
+body {
+  background-color: rgb(3, 49, 63);
+  color: rgb(214, 214, 214);
+  text-align: center;
+}
+
+footer {
+  background-color: black;
+  justify-content: space-around;
+  align-items: center;
+}
