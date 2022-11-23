@@ -11,58 +11,87 @@
   <script src="game.js" defer></script>
 </head>
 <body>
-  <header>
+  <header class="d-flex">
     <h1>Rock Paper Scissors Game</h1>
   </header>
   <main>
-    <section>
-      <h1>Game Round</h1>
-      <h1 class="square">0</h1>
+    <section class="square mt-5 d-flex flex-column">
+      <h2>Game Round</h2>
+      <h2 class="pt-2 text-success">0</h2>
     </section>
-    <section>
-      <aside>
-        <h1>Player's Choice: </h1>
-        <img src="">
+    <section class="d-flex flex-row m-5" id="showChoices">
+      <aside id="playerChoice">
+        <h2>Player's Choice: </h2>
+      </aside>
+      <aside id="pcChoice">
+        <img id="icons" class="img-thumbnail rounded-4" src="./Assets/img/allIcons.png" alt="rock paper scissors icons">
       </aside>
       <aside>
-        <h1>Player's Choice: </h1>
-        <img src="./Assets/img/allIcons.png" alt="rock paper scissors icons">
-      </aside>
-      <aside>
-        <h1>Computer's Choice: </h1>
-        <img src="">
+        <h2>Computer's Choice: </h2>
       </aside>
     </section>
-    <section>
+    <section class="m-5">
       <aside>
-        <h1>The Winner Is: </h1>
-        <h1 id="winnerName"></h1>
-        <h1 id="winnerPts"></h1>
-      </aside>
-      <aside>
-        <h1>Points:</h1>
-        <div>
-          <div>
-            <h2>Player</h2>
-            <h2>0</h2>
+        <div class="card text-center results">
+          <div class="card-header">
+            <h1>Who will win?</h1>
+            <p id="winnerResults"></p>
           </div>
-          <div>
-            <h2>Computer</h2>
-            <h2>0</h2>
+          <div class="card-body">
+            <div class="d-flex flex-row">
+              <div class="d-flex flex-column m-3">
+                <h2>Player</h2>
+                <h2>0</h2>
+              </div>
+              <div class="d-flex flex-column m-3">
+                <h2>Computer</h2>
+                <h2>0</h2>
+              </div>
+            </div>
           </div>
-        </div>
+          <div class="card-footer text-muted">
+            Current Results
+          </div>
+        </div>        
       </aside>
     </section>
     <section class="choices">
-      <img src="./Assets/img/rock.png" alt="rock">
-      <img src="./Assets/img/paper.png" alt="paper">
-      <img src="./Assets/img/scissors.png" alt="scissors">
+      <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Please make your choice!
+      </button>
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Pick Rock, Paper or Sciccors!</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex">
+              <img src="./Assets/img/rock.png" alt="rock">
+              <img src="./Assets/img/paper.png" alt="paper">
+              <img src="./Assets/img/scissors.png" alt="scissors">
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
   <footer class="d-flex flex-row">
-    <i class="bi bi-c-circle">Mesi</i>
-    <a href="https://github.com/BuksiMesi"><i class="bi bi-github"></i></a>
-    <a href="#"><i class="bi bi-linkedin"></i></a>
+    <figure class="text-center quote mt-3">
+      <blockquote class="blockquote">
+        <p>You have to learn the rules of the game. And then you have to play better than anyone else.</p>
+      </blockquote>
+      <figcaption class="blockquote-footer">
+        Quote from <cite title="Source Title">Albert Einstein</cite>
+      </figcaption>
+    </figure>
+    <aside>
+      <i class="bi bi-c-circle">Mesi 2022</i>
+    </aside>
+    <aside class="d-flex flex-row social-icons">
+      <a href="https://github.com/BuksiMesi"><i class="bi bi-github"></i></a>
+      <a href="#"><i class="bi bi-linkedin"></i></a>
+    </aside>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>

@@ -4,8 +4,82 @@ body {
   text-align: center;
 }
 
-footer {
-  background-color: black;
-  justify-content: space-around;
+img {
+  width: 100px;
+  height: 100px;
+}
+
+header {
+  background-color: rgb(20, 38, 49);
+  height: 150px;
+  justify-content: center;
   align-items: center;
+}
+
+.square {
+  background-color: rgb(50, 60, 63);
+  width: 15%;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.results {
+  width: 20%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  background-color: rgb(42, 98, 116);
+}
+
+.card-header, .card-footer {
+  width: 100%;
+  background-color: rgb(51, 83, 100);
+}
+
+#showChoices {
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#icons {
+  width: 150px;
+  height: 150px;
+}
+
+.modal-body {
+  justify-content: space-evenly;
+}
+
+.modal-body img {
+  border: 1px solid green;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: rgb(29, 29, 29);
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.quote {
+  margin: 15px;
+}
+
+footer a {
+  text-decoration: none;
+  color:rgb(214, 214, 214);
+}
+
+.social-icons i{
+  margin: 0 10px;
 }
