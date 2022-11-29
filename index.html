@@ -17,7 +17,7 @@
   <main>
     <section class="square mt-5 d-flex flex-column">
       <h2>Game Round</h2>
-      <h2 class="pt-2 text-success">0</h2>
+      <h2 class="pt-2 text-success" id="round">0</h2>
     </section>
     <section class="d-flex flex-row m-5" id="showChoices">
       <aside id="playerChoice">
@@ -66,7 +66,7 @@
               <h1 class="modal-title fs-5 text-center" id="exampleModalLabel">Pick Rock, Paper or Sciccors!</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body d-flex">
+            <div class="modal-body d-flex" id="choose">
               <img src="./Assets/img/rock.png" alt="rock">
               <img src="./Assets/img/paper.png" alt="paper">
               <img src="./Assets/img/scissors.png" alt="scissors">

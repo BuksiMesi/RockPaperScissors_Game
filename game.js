@@ -1,12 +1,33 @@
+const round = document.getElementById("round");
+const displayPlayerChoice = document.getElementById("playerChoice")
+const displayPcChoice = document.getElementById("pcChoice")
+const allPlayerChoices = document.getElementById("choose")
+//console.log(currPlayerChoice)
+console.log(allPlayerChoices)
+
+
 function computerPlay() {
-  const choices = ["Rock", "Paper", "Scissors"];
+  const img1 = new Image()
+  img1.src = "./Assets/img/rock.png"
+  img1.alt = "Rock"
+  const img2 = new Image()
+  img2.src = "./Assets/img/paper.png"
+  img2.alt = "Paper"
+  const img3 = new Image()
+  img3.src = "./Assets/img/scissors.png"
+  img3.alt = "Scissors"
+  const choices = [img1, img2, img3];
   return choices[Math.floor(Math.random() * 3)];
 };
 
-function lowerAndCapitalize(text) {
-  let lowCaseText = text.toLowerCase();
-  return lowCaseText.charAt(0).toUpperCase() + lowCaseText.slice(1);
-};
+console.log(computerPlay())
+console.log(computerPlay().getAttribute(["alt"]))
+
+function getPlayerChoice(allPlayerChoices) {
+  allPlayerChoices.addEventListener('click', () => {
+    
+  })
+} 
 
 function oneRound(playerSelection, computerSelection) {
   if(playerSelection === computerSelection) {
