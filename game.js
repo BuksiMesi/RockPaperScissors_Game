@@ -2,9 +2,6 @@ const round = document.getElementById("round");
 const displayPlayerChoice = document.getElementById("playerChoice")
 const displayPcChoice = document.getElementById("pcChoice")
 const allPlayerChoices = document.getElementById("choose")
-//console.log(currPlayerChoice)
-console.log(allPlayerChoices)
-
 
 function computerPlay() {
   const img1 = new Image()
@@ -17,19 +14,27 @@ function computerPlay() {
   img3.src = "./Assets/img/scissors.png"
   img3.alt = "Scissors"
   const choices = [img1, img2, img3];
+  console.log(choices[Math.floor(Math.random() * 3)]);
   return choices[Math.floor(Math.random() * 3)];
 };
 
-console.log(computerPlay())
-console.log(computerPlay().getAttribute(["alt"]))
-
-function getPlayerChoice(allPlayerChoices) {
-  allPlayerChoices.addEventListener('click', () => {
-    
+function getPlayerChoice() {
+  let allChoices = Array.from(allPlayerChoices.children)
+  let currChoice = {}
+  allChoices.forEach((choice) => {
+    choice.addEventListener('click', (e) => {
+      currChoice[choice.alt] = choice;
+      let displCh = document.createElement("img");
+      displCh.src = choice.src;
+      displayPlayerChoice.appendChild(displCh)
+      return currChoice
+    })
   })
 } 
 
-function oneRound(playerSelection, computerSelection) {
+function oneRound(currPlayerSelection, computerSelection) {
+  const playerSelection = Object.keys(currPlayerSelection)
+  console.log(playerSelection)
   if(playerSelection === computerSelection) {
     console.log("It\'s a tie!")
     return -1;
@@ -69,23 +74,23 @@ function oneRound(playerSelection, computerSelection) {
     let playerWins = 0;
     let computerWins = 0;
     for(let i=0; i < 5; i++) {
-      let playerSelection = prompt("Enter your choice: ");
-      let currPlayerSelection = lowerAndCapitalize(playerSelection);
-      let currRes = oneRound(currPlayerSelection, computerPlay());
-      while(currRes === 2) {
-        let newChoice = prompt("Enter your new choice: ");
-        let lowerNewChoice = lowerAndCapitalize(newChoice);
-        currRes = oneRound(lowerNewChoice, computerPlay());
-      }
-      if(currRes === 0) {
-        computerWins++;
-      } else if(currRes === 1) {
-        playerWins++;
-      } else {
-        computerWins++;
-        playerWins++;
-      }
-      console.log(`This is the ${i+1} round!`);
+      const thisChoice = getPlayerChoice();
+      console.log(Object.keys(thisChoice))
+      // let currRes = oneRound(thisChoice, computerPlay());
+      // console.log(currRes)
+      // while(currRes === 2) {
+      //   currRes = oneRound(getPlayerChoice(), computerPlay());
+      // }
+      // if(currRes === 0) {
+      //   computerWins++;
+      // } else if(currRes === 1) {
+      //   playerWins++;
+      // } else {
+      //   computerWins++;
+      //   playerWins++;
+      // }
+      // round.innerHTML = `${i+1}`;
+      // console.log(round)
     }
     console.log(`Results: Computer points: ${computerWins} - Your points: ${playerWins}`);
     if(computerWins > playerWins) {
